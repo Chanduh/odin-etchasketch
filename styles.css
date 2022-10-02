@@ -2,20 +2,16 @@
 
 
 * {
-    border: 1px solid pink;
     font-family: 'Overpass Mono', monospace;
     font-size: 1.2rem;
-
 }
 
 #gridContainer {
     display: flex;
     justify-content: flex-start;
-    border: 1px solid black;
     width: 80%;
     margin: auto;
     max-width: 650px;
-
 }
 
 button {
@@ -24,29 +20,14 @@ button {
     border: 1px soild black;
 }
 
-li {
-    list-style: none;
-    text-align: left;
-    border: 1px solid black
+button:hover {
+    color: rgb(99, 99, 99);
 }
 
-a:link {
-    text-decoration: none;
-}
-a:visited {
-    text-decoration: none;
-    color: black;
-}
-a:active {
-    text-decoration: none;
-    color: red;
-}
 
 #menu {
     width: 25%;
-    flex: auto;
     margin: 1rem;
-    padding: 0px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -76,9 +57,6 @@ a:active {
     border: 1px solid rgb(180, 180, 180);
   }
 
-
-
-
 h1 {
     text-align: center;
     font-size: 2rem;;
@@ -90,8 +68,6 @@ h1 {
     border: 1px solid black;
     border-radius: 100%;
     background-color: black;
-   
-
 }
 
 #circles {
@@ -116,6 +92,6 @@ h1 {
     border-radius: 10px;
     background-color: rgb(255, 42, 0);
 
-    margin: 2%
+    margin: 3%
 
 }

@@ -1,12 +1,5 @@
-const defaultSize = 16;
-let currentSize = defaultSize;
-let size = 16;
-
-
-function setCurrentSize(newSize) {
-    currentSize = newSize;
-  }
-
+let currentColor = '#000000';
+let currentSize = 16;
 
 
 
@@ -19,21 +12,32 @@ const green = document.getElementById('green')
 const blue = document.getElementById('blue')
 const purple = document.getElementById('purple')
 const pink = document.getElementById('pink')
+
+const bigger = document.getElementById('bigger')
+const smaller = document.getElementById('smaller')
+
 const clear = document.getElementById('clear')
-const setSize = document.getElementById('setSize')
 
 
-black.onclick = () => setCurrentMode('color')
+// add event listeners to the buttons + grid elements
+black.onclick = () => currentColor = '#000000';
+red.onclick = () => currentColor = '#ff2f00';
+orange.onclick = () => currentColor = '#f98900';
+yellow.onclick = () => currentColor = '#cece03';
+green.onclick = () => currentColor = '#55d279';
+blue.onclick = () => currentColor = '#55d2c6';
+purple.onclick = () => currentColor = '#a97fe3';
+pink.onclick = () => currentColor = '#ff04bc';
+
+bigger.onclick = () => biggerGrid();
+smaller.onclick = () => smallerGrid();
+
+
+clear.onclick = () => clearGrid();
 
 
 
-
-
-let mouseDown = false
-document.body.onmousedown = () => (mouseDown = true)
-document.body.onmouseup = () => (mouseDown = false)
-
-function setupGrid(size) {
+function createGrid(size) {
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`
     grid.style.gridTemplateRows = `repeat(${size}, 1fr)`
 
@@ -41,18 +45,33 @@ function setupGrid(size) {
         const gridElement = document.createElement('div')
         gridElement.classList.add('grid-element')
         gridElement.addEventListener('mouseover', changeColor)
+        gridElement.addEventListener('mousedown', changeColor)
         grid.appendChild(gridElement)
       }
 }
 
-function changeColor() {
-    let currentColor = black;
-    e.target.style.backgroundColor = currentColor; 
+function biggerGrid() {
+    grid.innerHTML = '';
+    createGrid(currentSize+=5)
+}
+
+function smallerGrid() {
+    grid.innerHTML = '';
+    createGrid(currentSize-=5);
+}
+
+function changeColor(e) {
+    // if (e.type === 'mouseover' && !mouseDown) return;
+    e.target.style.backgroundColor = currentColor;
+}
+
+
+function clearGrid() {
+    grid.innerHTML = '';
+    createGrid(currentSize);
   }
-
-
-  
 
 window.onload = () => {
-    setupGrid(DEFAULT_SIZE)
+    createGrid(currentSize)
   }
+
