@@ -6,12 +6,17 @@
     font-size: 1.2rem;
 }
 
+main {
+
+}
+
 #gridContainer {
     display: flex;
     justify-content: flex-start;
     width: 80%;
     margin: auto;
     max-width: 650px;
+    
 }
 
 button {
@@ -22,6 +27,9 @@ button {
 
 button:hover {
     color: rgb(99, 99, 99);
+}
+button:active {
+    color: rgb(255, 255, 255);
 }
 
 
@@ -54,7 +62,7 @@ button:hover {
 
 .grid-element {
     user-select: none;
-    border: 1px solid rgb(180, 180, 180);
+    /* border: 1px solid rgb(239, 239, 239); */
   }
 
 h1 {
