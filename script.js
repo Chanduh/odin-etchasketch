@@ -19,7 +19,6 @@ const smaller = document.getElementById('smaller')
 const clear = document.getElementById('clear')
 
 
-// add event listeners to the buttons + grid elements
 black.onclick = () => currentColor = '#000000';
 red.onclick = () => currentColor = '#ff2f00';
 orange.onclick = () => currentColor = '#f98900';
