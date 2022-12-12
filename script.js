@@ -67,6 +67,7 @@ function changeColor(e) {
 
 function clearGrid() {
     grid.innerHTML = '';
+    
     createGrid(currentSize);
   }
 
